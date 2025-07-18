@@ -1,0 +1,103 @@
+/* src/components/ProductSection.css */
+:root {
+    --ps-bg: #0D1117;
+    --ps-text-primary: #FFFFFF;
+    --ps-text-secondary: #9CA3AF;
+    --ps-gradient-from: #8B5CF6; /* Purple */
+    --ps-gradient-to: #22D3EE;   /* Cyan */
+}
+
+.product-section {
+    position: relative;
+    background-color: var(--ps-bg);
+    color: var(--ps-text-primary);
+    padding: 96px 24px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.product-section-glow {
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 600px;
+    background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.2), transparent 70%);
+    pointer-events: none;
+}
+
+.product-section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.product-heading {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 3.75rem; /* 60px */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.product-heading .gradient-text {
+    background: linear-gradient(90deg, var(--ps-gradient-from), var(--ps-gradient-to));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.product-subheading {
+    margin-top: 16px;
+    font-size: 1.25rem; /* 20px */
+    color: var(--ps-text-secondary);
+}
+
+.product-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+    margin-bottom: 80px;
+}
+
+.product-stat-item .stat-number {
+    font-size: 3.75rem; /* 60px */
+    font-weight: 700;
+}
+
+.product-stat-item .stat-label {
+    margin-top: 8px;
+    color: var(--ps-text-secondary);
+}
+
+.product-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.product-feature-item .feature-title {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.product-feature-item .feature-description {
+    color: var(--ps-text-secondary);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .product-heading { font-size: 2.5rem; }
+    .product-stats-grid { grid-template-columns: 1fr; gap: 48px; }
+    .product-features-grid { grid-template-columns: 1fr; gap: 48px; }
+}
