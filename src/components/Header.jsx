@@ -32,7 +32,8 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-moonflow-dark/50 backdrop-blur-glass" : "bg-transparent"
+      // Increased blur from backdrop-blur-md to backdrop-blur-lg
+      isScrolled ? "bg-gray-900/50 backdrop-blur-lg" : "bg-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -47,7 +48,7 @@ const Header = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-white hover:text-gray-300 transition-colors duration-200 text-sm font-medium"
+                className="text-white hover:text-gray-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.7)] transition-all duration-300 text-sm font-medium transform origin-center"
               >
                 {link.label}
               </a>
@@ -63,13 +64,14 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden bg-moonflow-dark/95 backdrop-blur-glass border-t border-moonflow-purple/30">
+          // Increased blur from backdrop-blur-md to backdrop-blur-lg for mobile menu as well
+          <div className="md:hidden bg-gray-900/95 backdrop-blur-lg">
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block text-white hover:text-gray-300 transition-colors duration-200 font-medium"
+                  className="block text-white hover:text-gray-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.7)] transition-all duration-300 font-medium transform origin-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

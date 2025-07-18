@@ -1,19 +1,39 @@
 // App.jsx
 
 import React from 'react';
-
-import Feedback from './components/Feedback'; // Assuming Feedback.jsx is in the 'components' folder
-import Footer from './components/Footer';     // Assuming Footer.jsx is in the 'components' folder
-import './App.css';
+import { Helmet } from 'react-helmet';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import AIOfferingsSection from './components/Offering'; // Assuming this is your "Optimise Your Business" section
+import FutureSection from './components/FutureSection'; // Import the new FutureSection component
+import Footer from './components/Footer';
+import Feedback from './components/Feedback';
 
 function App() {
   return (
-    <div className="App">
-      {/* Render the Feedback component just above the Footer */}
-      <Feedback />
+    <div className="relative min-h-screen overflow-x-hidden font-sans">
+      <div
+        className="fixed inset-0 z-[-1]"
+        style={{
+          backgroundImage: `url('/moonrow.png')`,
+          backgroundPosition: 'top left',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      ></div>
 
-      {/* Your Footer component */}
-      <Footer />
+      <div className="layout-container flex flex-col flex-grow bg-transparent relative z-10">
+        <Helmet>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Helmet>
+
+        <Header />
+        <HeroSection />
+        <AIOfferingsSection />
+        <FutureSection /> {/* Added the FutureSection component here */}
+         <Feedback />
+        <Footer />
+      </div>
     </div>
   );
 }

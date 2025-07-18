@@ -1,0 +1,9 @@
+/* ChatSupportCard.css */
+
+.chat-support-container {
+  background: linear-gradient(135deg, #4b167e, #03a07e); /* Purple to Cyan */
+  padding: 0.1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(138, 43, 226, 0.5); /* Soft purple border */
+  box-shadow: 0 0 12px rgba(138, 43, 226, 0.4); /* Glowing purple edge */
+}

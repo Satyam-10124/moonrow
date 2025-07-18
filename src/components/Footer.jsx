@@ -29,7 +29,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#0D1117] text-gray-300 font-sans">
+    <footer className="bg-transparent text-gray-300 font-sans"> {/* Changed bg-[#0D1117] to bg-transparent */}
       <div className="container mx-auto px-6 lg:px-8 py-16">
 
         {/* MoonRow Title */}

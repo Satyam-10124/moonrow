@@ -1,0 +1,63 @@
+/* src/components/HeroButton.css */
+
+/* Styles for the wrapper div that creates the glowing border effect */
+.glow-button-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 3px;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.glow-button-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 0deg,
+    var(--moonflow-purple) 0%,
+    var(--moonflow-purple) 33.33%,
+    var(--moonflow-green-cyan) 33.33%,
+    var(--moonflow-green-cyan) 66.66%,
+    var(--moonflow-pink) 66.66%,
+    var(--moonflow-pink) 100%
+  );
+  filter: blur(15px);
+  animation: rotateBorder 6s linear infinite;
+  z-index: 0;
+  border-radius: 9999px;
+}
+
+/* Define CSS variables for colors from Tailwind config for use in this file */
+:root {
+  --moonflow-purple: #A78BFA;
+  --moonflow-green-cyan: #06B6D4;
+  --moonflow-pink: #EC4899;
+  --moonflow-card-bg: #1A202E; /* New color for button background */
+  --moonflow-border: #2C3240; /* New color for button hover */
+}
+
+
+.inner-button {
+  position: relative;
+  z-index: 1;
+  background-color: var(--moonflow-card-bg); /* Use the new card background color */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Keep transition for background color change */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.inner-button:hover {
+  background-color: var(--moonflow-border); /* Use border color for hover effect */
+  /* REMOVED: transform: scale(1.05); */ /* This line has been removed */
+}
