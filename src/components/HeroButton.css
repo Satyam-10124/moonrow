@@ -1,63 +1,49 @@
-/* src/components/HeroButton.css */
-
-/* Styles for the wrapper div that creates the glowing border effect */
 .glow-button-wrapper {
   position: relative;
   display: inline-block;
-  padding: 3px;
-  border-radius: 9999px;
-  overflow: hidden;
+  border-radius: 99999px;
+  padding: 0.1px;
   background: transparent;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+  border: none !important;
 }
 
-.glow-button-wrapper::before {
-  content: '';
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background: conic-gradient(
-    from 0deg,
-    var(--moonflow-purple) 0%,
-    var(--moonflow-purple) 33.33%,
-    var(--moonflow-green-cyan) 33.33%,
-    var(--moonflow-green-cyan) 66.66%,
-    var(--moonflow-pink) 66.66%,
-    var(--moonflow-pink) 100%
+.glow-button-wrapper:hover {
+  background: linear-gradient(
+    90deg,
+    #ff00cc 0%,
+    #00ffe0 100%
   );
-  filter: blur(15px);
-  animation: rotateBorder 6s linear infinite;
-  z-index: 0;
-  border-radius: 9999px;
-}
+  box-shadow:
+    /* Soft white core glow */
+    0 0 10px 3px rgba(255, 255, 255, 0.2),
 
-/* Define CSS variables for colors from Tailwind config for use in this file */
-:root {
-  --moonflow-purple: #A78BFA;
-  --moonflow-green-cyan: #06B6D4;
-  --moonflow-pink: #EC4899;
-  --moonflow-card-bg: #1A202E; /* New color for button background */
-  --moonflow-border: #2C3240; /* New color for button hover */
-}
+    /* Pink glows */
+    -8px 8px 18px 6px rgba(255, 0, 180, 0.25),   /* bottom-left */
+    -10px -10px 18px 6px rgba(255, 0, 180, 0.2), /* top-left */
 
+    /* Green glows (main top) */
+    6px -12px 22px 6px rgba(0, 255, 190, 0.22),
+    12px -16px 18px 6px rgba(0, 255, 128, 0.2);
+}
 
 .inner-button {
-  position: relative;
-  z-index: 1;
-  background-color: var(--moonflow-card-bg); /* Use the new card background color */
+  background-color: #1a202e;
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  font-weight: 500;
-  transition: all 0.3s ease; /* Keep transition for background color change */
+  font-weight: 600;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid transparent;
+  z-index: 1;
+  transition: background 0.3s ease;
 }
 
 .inner-button:hover {
-  background-color: var(--moonflow-border); /* Use border color for hover effect */
-  /* REMOVED: transform: scale(1.05); */ /* This line has been removed */
+  background-color: #2c3240;
 }

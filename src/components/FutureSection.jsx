@@ -1,3 +1,4 @@
+// src/components/FutureSection.jsx
 import React, { useState } from 'react';
 import { MessageSquare, Users, Bell, Zap, Settings, Database } from 'lucide-react'; // Using Lucide React for icons
 import toolImage from '../assets/tool.png'; // Assuming this path is correct in your project
@@ -96,7 +97,8 @@ const FutureSection = () => {
             className="mt-4 mb-4 rounded-lg max-w-full h-auto"
           />
           <div className="flex flex-wrap gap-2 text-xs font-medium justify-center">
-            {cardOptions[id].map((option, index) => (
+            {/* Fixed: Accessing object property using bracket notation */}
+            {cardOptions[id] && cardOptions[id].map((option, index) => (
               <span key={index} className="bg-[#0D1117] text-gray-400 px-3 py-1 rounded-full border border-[#2F3440] hover:text-white hover:bg-cyan-700 transition-colors duration-300 cursor-pointer">
                 {option}
               </span>
@@ -108,7 +110,7 @@ const FutureSection = () => {
   };
 
   return (
-    <section className="relative py-20 px-4 lg:px-6 text-white text-center overflow-hidden">
+    <section className="relative py-20 px-4 lg:px-6 text-white text-center overflow-hidden"> {/* Removed bg-[#0A0A1F] from here */}
       {/* Background Gradients/Blobs (Optional, adjust as needed) */}
       <div className="absolute top-1/4 left-0 w-72 h-72 bg-blue-700 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-blob"></div>
       <div className="absolute bottom-1/4 right-0 w-60 h-60 bg-purple-700 rounded-full mix-blend-multiply filter blur-2xl opacity-10 animate-blob animation-delay-2000"></div>
@@ -170,6 +172,20 @@ const FutureSection = () => {
             'Unify data sources for real-time insights and smarter decisions with AI integration.'
           )}
         </div>
+      </div>
+
+      {/* SVG for the bottom curve - Adjusted to create a downward dip */}
+      <div className="absolute bottom-0 left-0 w-full h-16 overflow-hidden z-10">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0 L0,100 C30,20 70,20 100,100 L100,0 Z"
+            fill="#0A0A1F" // Matches the background color of FutureSection
+          />
+        </svg>
       </div>
     </section>
   );

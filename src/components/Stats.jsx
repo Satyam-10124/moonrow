@@ -34,10 +34,24 @@ const Stats = () => {
   const [activeTab, setActiveTab] = useState(2); // Set "No-Code Friendly Tools" as default active tab
 
   return (
-    <section className="stats-section">
+    <section className="stats-section relative"> {/* Added relative for absolute positioning of the curve */}
+      {/* SVG for the top curve - Adjusted to create an upward hill */}
+      <div className="absolute top-0 left-0 w-full h-16 overflow-hidden z-10">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none" // Ensures the SVG scales without distortion
+        >
+          <path
+            d="M0,100 L0,0 C30,80 70,80 100,0 L100,100 Z"
+            fill="#0A0A1F" // Matches the background color of FutureSection
+          />
+        </svg>
+      </div>
+
       <div className="stats-glow"></div>
-      <div className="stats-container">
-        
+      <div className="stats-container relative z-20"> {/* Added relative z-20 for content to be above curve */}
+
         <h2 className="stats-heading">
           Accelerate productivity and drive innovation with powerful AI Solutions
         </h2>
@@ -73,11 +87,11 @@ const Stats = () => {
               </button>
             ))}
           </div>
-          
+
           <div className="tab-content">
             <img
-              src={tabData[activeTab].contentImage}
-              alt={tabData[activeTab].tabTitle}
+              src={tabData.at(activeTab)?.contentImage}
+              alt={tabData.at(activeTab)?.tabTitle}
               className="tab-content-image"
             />
           </div>

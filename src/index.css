@@ -44,6 +44,8 @@ body {
   background-color: #f9fbf9;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 html, body, #root {

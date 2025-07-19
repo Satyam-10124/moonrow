@@ -12,7 +12,7 @@
 
 .stats-section {
     position: relative;
-    background-color: var(--stats-bg);
+    background: url('/stats_bg.jpeg') no-repeat center center / cover;
     color: var(--stats-text-primary);
     padding: 96px 24px;
     overflow: hidden;
@@ -115,7 +115,7 @@
 
 .tab-content {
     background-color: var(--stats-content-bg);
-    backdrop-filter: blur(4px);
+    /* REMOVED: backdrop-filter: blur(4px); */
     border: 1px solid var(--stats-content-border);
     padding: 2rem;
     border-radius: 0.75rem;

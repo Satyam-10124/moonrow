@@ -4,14 +4,13 @@ import ChatSupportCard from './ChatSupportCard'; // Assuming ChatSupportCard is 
 
 const AIOfferingsSection = () => {
   return (
-    <section className="relative py-16 px-4 lg:px-6 text-white overflow-hidden">
+    <section className="relative py-16 pt-0 px-4 lg:px-6 text-white overflow-hidden">
       {/* Background Gradients/Blobs (similar to image) - Adjusted colors and opacities for better match */}
-      <div className="absolute top-0 left-1/4 w-80 h-80 bg-purple-700 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-blob"></div>
       <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-blue-700 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-blob animation-delay-2000"></div>
       <div className="absolute bottom-0 left-1/3 w-60 h-60 bg-green-700 rounded-full mix-blend-multiply filter blur-2xl opacity-15 animate-blob animation-delay-4000"></div>
 
       {/* NEW OUTER WRAPPER DIV - This will now contain ONLY the main content, not the CTA */}
-      <div className="relative z-20 p-8 rounded-2xl bg-gradient-to-br from-[#1A2536]/80 to-[#0D1117]/80 backdrop-blur-sm">
+      <div className="relative z-20 p-8 pt-0 rounded-2xl bg-gradient-to-br from-[#1A2536]/80 to-[#0D1117]/80 backdrop-blur-sm">
         <div className="bg-[#0D1117]/70 rounded-2xl p-6">
           <div className="max-w-6xl mx-auto relative z-10 flex flex-col h-full">
             {/* Top Navigation/Labels (AI for Service, AI for Process, etc.) */}
