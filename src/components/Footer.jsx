@@ -1,7 +1,6 @@
 import React from 'react';
-// Updated to include FaGitlab, FaReddit and remove FaHeart
 import { FaGithub, FaLinkedin, FaGitlab, FaReddit } from 'react-icons/fa';
-import { SiX } from "react-icons/si"; // The 'X' logo
+import { SiX } from "react-icons/si";
 
 const Footer = () => {
   const locations = [
@@ -10,36 +9,17 @@ const Footer = () => {
   ];
 
   const linkSections = [
-    {
-      title: 'AI Offerings',
-      links: ['AI for Service', 'AI for Process', 'AI for Work', 'AI for Growth']
-    },
-    {
-      title: 'Agent Platform',
-      links: ['Agent Platform', 'Experience Optimization', 'Agentic Applications', 'Enterprise-ready RAG']
-    },
-    {
-      title: 'Developers',
-      links: ['Community', 'Docs', 'MoonRow Academy', 'Status']
-    },
-    {
-      title: 'Resources',
-      links: ['Blog', 'Webinars', 'Case Studies', 'Research Analysis']
-    }
+    { title: 'Use Cases', links: ['Remote Work & Global Teams', 'Smart Contract Development', 'Task Bounties', 'Treasury Management'] },
+    { title: 'Advantages of ICP', links: ['Infinite Scalability', 'Web Speed Performance', 'Reverse Gas Model', 'Direct Web Serving'] },
+    { title: 'Developers', links: ['Community', 'Docs', 'ICP Work', 'Status'] },
+    { title: 'Resources', links: ['Blog', 'Webinars', 'Case Studies', 'Research Analysis'] }
   ];
 
   return (
-    <footer className="bg-transparent text-gray-300 font-sans"> {/* Changed bg-[#0D1117] to bg-transparent */}
+    <footer className="bg-transparent text-gray-300 font-sans">
       <div className="container mx-auto px-6 lg:px-8 py-16">
-
-        {/* MoonRow Title */}
-        <h2 className="text-2xl font-bold text-white mb-12">
-          MoonRow
-        </h2>
-
+        <h2 className="text-2xl font-bold text-white mb-12">ICP Work</h2>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-
-          {/* Left Section: Contact & Locations */}
           <div className="lg:col-span-5">
             <h3 className="text-lg font-semibold text-white">Let's work together</h3>
             <p className="mt-2 text-gray-400 text-sm">Get answers and a customized quote for you projects.</p>
@@ -50,7 +30,6 @@ const Footer = () => {
                 </span>
               ))}
             </div>
-            {/* Social Icons Section Updated and Reordered */}
             <div className="flex items-center space-x-6 mt-8 text-gray-400">
               <a href="#" aria-label="GitHub" className="hover:text-white transition-colors"><FaGithub size={22} /></a>
               <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors"><FaLinkedin size={22} /></a>
@@ -58,9 +37,10 @@ const Footer = () => {
               <a href="#" aria-label="Reddit" className="hover:text-white transition-colors"><FaReddit size={22} /></a>
               <a href="#" aria-label="X (formerly Twitter)" className="hover:text-white transition-colors"><SiX size={18} /></a>
             </div>
-          </div>
+            
+            {/* The FAQ button has been removed from here */}
 
-          {/* Right Section: Links & Newsletter */}
+          </div>
           <div className="lg:col-span-7">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {linkSections.map((section) => (
@@ -74,8 +54,6 @@ const Footer = () => {
                 </div>
               ))}
             </div>
-
-            {/* Newsletter Box */}
             <div className="mt-12 p-[1px] rounded-2xl bg-gradient-to-b from-gray-800 via-gray-900 to-transparent">
               <div
                 className="bg-[#0B132B] rounded-[15px] p-6 flex flex-col md:flex-row items-center justify-between gap-6"
@@ -100,13 +78,10 @@ const Footer = () => {
                 </button>
               </div>
             </div>
-
           </div>
         </div>
-
-        {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
-          <p className="order-2 sm:order-1 mt-4 sm:mt-0">&copy; 2025 MoonRow Inc. All trademarks are property of their respective owners.</p>
+          <p className="order-2 sm:order-1 mt-4 sm:mt-0">&copy; 2025 ICP Work Inc. All trademarks are property of their respective owners.</p>
           <div className="order-1 sm:order-2 flex space-x-6">
             <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-gray-300 transition-colors">Terms of Service</a>
