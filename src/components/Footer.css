@@ -1,0 +1,63 @@
+/*
+ * Premium & Sleek Animated Button
+ */
+.faq-button-container {
+  margin-top: 2rem;
+}
+
+.faq-glow-button {
+  position: relative;
+  display: inline-block;
+  padding: 14px 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  
+  color: #a7b3c7; /* Lighter slate text */
+  background: #111827; /* Darker than slate-800 for more contrast */
+  
+  /* A subtle, semi-transparent border */
+  border: 1px solid rgba(100, 116, 139, 0.4); 
+  border-radius: 9999px;
+
+  /* Smooth transitions for a sleek finish */
+  transition: color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden; /* Crucial for containing the pseudo-element */
+  z-index: 1;
+}
+
+/* This is the glow orb that will follow the mouse */
+.faq-glow-button::before {
+  content: '';
+  position: absolute;
+  /* These are now controlled by JavaScript */
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  
+  width: 100px;
+  height: 100px;
+  
+  /* The radial gradient creates the soft aurora effect */
+  background: radial-gradient(circle, 
+    rgba(59, 130, 246, 0.6) 0%, /* Blueish center */
+    rgba(34, 211, 238, 0.3) 40%, /* Cyanish mid */
+    transparent 70%
+  );
+  
+  /* Center the gradient on the cursor */
+  transform: translate(-50%, -50%);
+  
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.faq-glow-button:hover {
+  color: #ffffff;
+  border-color: rgba(148, 163, 184, 0.6);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.faq-glow-button:hover::before {
+  opacity: 1;
+}

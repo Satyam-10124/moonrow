@@ -1,0 +1,18 @@
+.animate-pulse-tooltip {
+  animation: pulse-tooltip 5s ease-in-out infinite;
+}
+
+@keyframes pulse-tooltip {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.95);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
