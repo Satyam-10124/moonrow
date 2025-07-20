@@ -1,8 +1,8 @@
 import React from 'react';
-import './ChatSupportCard.css'; // ← Import the CSS here
+import './ChatSupportCard.css';
 import { MessageCircleMore } from 'lucide-react';
 
-const ChatSupportCard = () => {
+const ChatSupportCard = ({ type = 'web3' }) => {
   const optionCount = 20;
   const dotElements = [];
 
@@ -27,11 +27,37 @@ const ChatSupportCard = () => {
     );
   }
 
+  // Web3 Chat Template
+  const web3Support = {
+    user: "Hi, I'm trying to deploy my dApp",
+    agent:
+      "Sure! Let's get your project live. Are you facing issues with any of the following?",
+    issues: [
+      'Canister deployment errors',
+      'Reverse gas configuration',
+      'Integration with Web2 APIs',
+      'Other technical challenges',
+    ],
+  };
+
+  // Enterprise Chat Template
+  const enterpriseSupport = {
+    user: "Hey, I need help setting up my team",
+    agent:
+      "Of course! I can guide you through onboarding and operations. What are you looking to do?",
+    issues: [
+      'Hire verified Web3 developers',
+      'Track productivity and deliverables',
+      'Set up smart contract payments',
+      'Other enterprise solutions',
+    ],
+  };
+
+  const chat = type === 'enterprise' ? enterpriseSupport : web3Support;
+
   return (
     <div className="chat-support-container text-white">
-      {/* Inner glassy card */}
       <div className="relative p-6 rounded-2xl bg-[#0B1627] bg-opacity-70 backdrop-blur-lg border border-[#2F3440] flex flex-col h-full w-full">
-        
         {/* Header */}
         <div className="flex items-center justify-center mb-6">
           <div className="flex items-center space-x-2">
@@ -43,28 +69,20 @@ const ChatSupportCard = () => {
         </div>
 
         {/* Inner response card */}
-        <div className="bg-[#0F1C30] p-4 rounded-xl border border-[#2F3440] space-y-4 flex flex-col flex-grow"> {/* Added flex flex-col flex-grow */}
-          {/* User message moved inside and aligned to the right */}
-          <div className="flex justify-end mb-4"> {/* Added mb-4 for spacing */}
+        <div className="bg-[#0F1C30] p-4 rounded-xl border border-[#2F3440] space-y-4 flex flex-col flex-grow">
+          <div className="flex justify-end mb-4">
             <div className="bg-white text-[#0B1627] px-4 py-2.5 rounded-2xl rounded-tr-md max-w-xs text-sm shadow-md">
-              Hi, I'm having an issue
+              {chat.user}
             </div>
           </div>
 
-          <div className="text-[#C5C9D3] text-sm leading-relaxed">
-            Hi! Sorry to hear that. Could you tell me what issue you're facing? Here are some common problems:
-          </div>
+          <div className="text-[#C5C9D3] text-sm leading-relaxed">{chat.agent}</div>
 
-          <div className="relative pl-6 flex-grow"> {/* Added flex-grow */}
+          <div className="relative pl-6 flex-grow">
             {dotElements}
 
             <div className="relative z-10 space-y-3">
-              {[
-                "Tracking issues (Can't track my package)",
-                "Delivery delay (My package is late)",
-                "Wrong or damaged package",
-                "Other issues",
-              ].map((text, idx) => (
+              {chat.issues.map((text, idx) => (
                 <div
                   key={idx}
                   className="flex items-center space-x-3 px-4 py-3 bg-[#131B2E] rounded-xl border border-[#2F3440] cursor-pointer transition duration-200 group hover:bg-[#1A2D4A] hover:border-[#3C82F6] hover:shadow-md"

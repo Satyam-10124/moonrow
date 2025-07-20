@@ -12,17 +12,17 @@ const HeroSection = () => {
         <div className="relative z-10 text-center max-w-5xl mx-auto pt-24">
           <div className="inline-block mb-10">
             <span className="text-sm font-medium text-moonflow-text-secondary bg-moonflow-purple/20 px-5 py-2.5 rounded-full border border-moonflow-purple/40">
-              AI-Powered Automation
+               Decentralized Freelancing
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-moonflow-text leading-[0.9] mb-8 tracking-tight">
-            Efficient Automation
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-moonflow-text leading-[0.9] mb-8 tracking-tight">
+            The Future of Work is Decentralized.
             <br />
-            <span className="gradient-text">Made Easy.</span>
+            <span className="gradient-text"> Welcome to ICP Work.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+          <p className="text-s md:text-m text-gray-400 max-w-3xl mx-auto mb-12">
             Transform your workflow with MoonRow intelligent AI chatbots. Automate
             interactions, improve efficiency, and deliver exceptional support effortlessly.
           </p>
@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div>
             <div className="glow-button-wrapper">
               <button className="inner-button">
-                <span className="relative z-10">Get Started</span>
+                <span className="relative z-10">Join ICP Work</span>
               </button>
             </div>
           </div>

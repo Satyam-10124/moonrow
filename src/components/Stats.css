@@ -1,9 +1,8 @@
-/* src/components/Stats.css */
 :root {
     --stats-bg: #0D1117;
     --stats-text-primary: #FFFFFF;
     --stats-text-secondary: #9CA3AF;
-    --stats-glow: rgba(59, 130, 246, 0.2); /* Blue glow */
+    --stats-glow: rgba(59, 130, 246, 0.2);
     --stats-tab-active-bg: rgba(255, 255, 255, 0.1);
     --stats-tab-active-border: rgba(255, 255, 255, 0.2);
     --stats-content-bg: rgba(22, 27, 34, 0.8);
@@ -12,7 +11,7 @@
 
 .stats-section {
     position: relative;
-    background: url('/stats_bg.jpeg') no-repeat center center / cover;
+    background: url('/stats_bg.png') no-repeat center center / cover;
     color: var(--stats-text-primary);
     padding: 96px 24px;
     overflow: hidden;
@@ -115,7 +114,6 @@
 
 .tab-content {
     background-color: var(--stats-content-bg);
-    /* REMOVED: backdrop-filter: blur(4px); */
     border: 1px solid var(--stats-content-border);
     padding: 2rem;
     border-radius: 0.75rem;
@@ -132,7 +130,6 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .tab-section {
         grid-template-columns: 1fr;
@@ -142,4 +139,30 @@
 @media (max-width: 767px) {
     .stats-heading { font-size: 2.25rem; }
     .stats-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.tab-button.active {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: transparent;
+  border-image: linear-gradient(to bottom right, #3B82F6, #14B8A6) 1;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.tab-content {
+  background-color: rgba(22, 27, 34, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 2.5rem;
+  box-shadow: 0 0 35px rgba(59, 130, 246, 0.25);
+}
+.tab-button {
+  transition: all 0.3s ease-in-out;
+}
+
+.tab-button:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
 }

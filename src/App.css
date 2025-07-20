@@ -1,2 +1,10 @@
 /* App specific styles can go here */
 @import "tailwindcss";
+/* Add this to your global CSS */
+.bg-grain {
+  background-image: url("/public/grain.png"); /* put your uploaded PNG in public folder */
+  background-repeat: repeat;
+  background-size: cover;
+  opacity: 0.08; /* adjust for more/less intensity */
+  pointer-events: none;
+}
