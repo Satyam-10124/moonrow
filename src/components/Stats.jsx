@@ -48,16 +48,16 @@ const Stats = () => {
 
         <div className="stats-grid">
           <div className="stat-item">
-            <p className="stat-number">$2.5M+</p>
-            <p className="stat-label">Total Value Locked</p>
+            <p className="stat-number">0-5%</p>
+            <p className="stat-label">Platform Fees</p>
           </div>
           <div className="stat-item">
-            <p className="stat-number">10K+</p>
-            <p className="stat-label">Projects Completed</p>
+            <p className="stat-number">1-2s</p>
+            <p className="stat-label">Transaction Speed</p>
           </div>
           <div className="stat-item">
-            <p className="stat-number">5K</p>
-            <p className="stat-label">Active Freelancers</p>
+            <p className="stat-number">$0</p>
+            <p className="stat-label">Gas Fees</p>
           </div>
         </div>
 

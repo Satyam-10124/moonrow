@@ -10,6 +10,8 @@ import Stats from './components/Stats';
 import FaqFloater from './components/FaqFloater';
 import FaqPage from './components/FaqPage';
 import Dashboard from './components/Dashboard';
+import Built from './components/Built';      // ✅ Imported from second version
+import Ready from './components/Ready';      // ✅ Imported from second version
 
 const MainPage = () => (
   <>
@@ -18,7 +20,7 @@ const MainPage = () => (
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url('/MoonRow.jpeg')`,
+          backgroundImage: `url('/MoonRow.jpeg')`,    // ✅ Fixed syntax
           backgroundPosition: 'top left',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
@@ -35,11 +37,11 @@ const MainPage = () => (
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
 
-      {/* 🔵 Only Offering and Future with off_bg.jpeg */}
+      {/* 🔵 Offering + Future in custom background */}
       <div
         className="relative"
         style={{
-          backgroundImage: `url('/off_bg.png')`,
+          backgroundImage: `url('/off_bg.png')`,      // ✅ Fixed syntax
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
@@ -47,11 +49,13 @@ const MainPage = () => (
       >
         <Dashboard />
         <AIOfferingsSection />
-
-      </div>
         <FutureSection />
+      </div>
+
       <Stats />
+      <Built />           {/* ✅ Added from version 2 */}
       <Feedback />
+      <Ready />           {/* ✅ Added from version 2 */}
       <Footer />
     </div>
 

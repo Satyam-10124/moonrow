@@ -1,0 +1,57 @@
+/* Base styles for all three buttons */
+.glow-button {
+  position: relative; /* Required for the glow effect */
+  z-index: 1;
+  overflow: hidden; /* This is important for the effect to look clean */
+  background-color: rgb(30 41 59 / 70%); /* A darker base background */
+  border: 1px solid rgb(255 255 255 / 20%);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Default dark blue glow (for the other two buttons) */
+.glow-button:hover {
+  border-color: rgb(147 197 253 / 50%);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgb(147 197 253 / 30%),
+              0 0 20px rgb(30 58 138 / 60%);
+}
+
+
+/* --- CSS FOR THE PURPLE-TO-GREEN GRADIENT GLOW --- */
+
+/* First, we remove the default blue box-shadow from the special button */
+.glow-button.glow-rainbow:hover {
+  box-shadow: none; /* No box-shadow needed, the pseudo-element will be the glow */
+  transform: translateY(-2px);
+  border-color: rgb(255 255 255 / 40%);
+}
+
+/* This ::before pseudo-element creates the glow BEHIND the button */
+.glow-button.glow-rainbow::before {
+  content: '';
+  position: absolute;
+  z-index: -1; /* Places it behind the button text */
+  
+  /* Make it larger than the button to create the glow area */
+  inset: -8px; 
+  
+  /* The gradient that creates the purple-to-green colors */
+  background: linear-gradient(110deg, #d946ef, #3b82f6, #14b8a6);
+
+  /* This blurs the gradient, turning it into a soft glow */
+  filter: blur(20px);
+  
+  /* Make the glow shape match the button's rounded shape */
+  border-radius: 9999px; 
+  
+  /* The glow is hidden by default */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* On hover, we fade in the glow */
+.glow-button.glow-rainbow:hover::before {
+  opacity: 1;
+}

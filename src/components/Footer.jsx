@@ -1,6 +1,11 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaGitlab, FaReddit } from 'react-icons/fa';
+// Imports for the specific icons you requested
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiX } from "react-icons/si";
+import { BsChatDots } from 'react-icons/bs'; // Using this for the OpenChat icon
+
+// Import your logo image
+import JohnsonControlsLogo from '../assets/johnson-controls-logo.png';
 
 const Footer = () => {
   const locations = [
@@ -18,7 +23,10 @@ const Footer = () => {
   return (
     <footer className="bg-transparent text-gray-300 font-sans">
       <div className="container mx-auto px-6 lg:px-8 py-16">
-        <h2 className="text-2xl font-bold text-white mb-12">ICP Work</h2>
+        
+        {/* Logo size increased to h-12 */}
+        <img src={JohnsonControlsLogo} alt="ICP Work Logo" className="mb-12 h-12" />
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <h3 className="text-lg font-semibold text-white">Let's work together</h3>
@@ -30,15 +38,13 @@ const Footer = () => {
                 </span>
               ))}
             </div>
+
             <div className="flex items-center space-x-6 mt-8 text-gray-400">
-              <a href="#" aria-label="GitHub" className="hover:text-white transition-colors"><FaGithub size={22} /></a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors"><FaLinkedin size={22} /></a>
-              <a href="#" aria-label="GitLab" className="hover:text-white transition-colors"><FaGitlab size={22} /></a>
-              <a href="#" aria-label="Reddit" className="hover:text-white transition-colors"><FaReddit size={22} /></a>
               <a href="#" aria-label="X (formerly Twitter)" className="hover:text-white transition-colors"><SiX size={18} /></a>
+              <a href="#" aria-label="LinkedIn" className="hover:text-white transition-colors"><FaLinkedin size={22} /></a>
+              <a href="#" aria-label="GitHub" className="hover:text-white transition-colors"><FaGithub size={22} /></a>
+              <a href="#" aria-label="OpenChat" className="hover:text-white transition-colors"><BsChatDots size={22} /></a>
             </div>
-            
-            {/* The FAQ button has been removed from here */}
 
           </div>
           <div className="lg:col-span-7">
