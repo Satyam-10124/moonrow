@@ -68,19 +68,36 @@ const FutureSection = () => {
 
     const showImage = id === 'collaboration-tools';
 
+    const baseCardClasses = `bg-[#070714] rounded-xl ${isCollaborationCard ? 'p-4 pb-12' : 'p-3 pb-10'} border border-[#2F3440] flex flex-col items-center text-center transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-[0_0_15px_rgba(0,255,255,0.4)] cursor-pointer overflow-hidden ${isExpanded ? expandedHeight : collapsedHeight}`;
+
+    let dynamicBgStyle = {};
+    if (!isCollaborationCard) {
+      if (isExpanded) {
+        dynamicBgStyle = {
+          background: 'linear-gradient(to bottom right, rgba(0, 128, 0, 0.2), rgba(0, 0, 0, 0.7))', // Green-black gradient
+        };
+      } else {
+        dynamicBgStyle = {
+          background: 'linear-gradient(to bottom right, rgba(255, 0, 0, 0.2), rgba(0, 0, 0, 0.7))', // Red-black gradient
+        };
+      }
+    } else {
+      dynamicBgStyle = {
+        backgroundImage: 'url(/tools_bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        zIndex: 1,
+      };
+    }
+
     return (
       <div
         key={id}
-        className={`bg-[#070714] rounded-xl ${isCollaborationCard ? 'p-4 pb-12' : 'p-3 pb-10'} border border-[#2F3440] flex flex-col items-center text-center transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-[0_0_15px_rgba(0,255,255,0.4)] cursor-pointer overflow-hidden ${isExpanded ? expandedHeight : collapsedHeight}`}
+        className={baseCardClasses}
         onClick={() => toggleExpand(id)}
-        style={id === 'collaboration-tools' ? {
-          backgroundImage: 'url(/tools_bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          position: 'relative',
-          zIndex: 1,
-        } : {}}
+        style={dynamicBgStyle}
       >
         {id === 'collaboration-tools' && (
           <div className="absolute inset-0 bg-black opacity-40 z-0 rounded-xl"></div>

@@ -23,8 +23,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-s md:text-m text-gray-400 max-w-3xl mx-auto mb-12">
-            Transform your workflow with MoonRow intelligent AI chatbots. Automate
-            interactions, improve efficiency, and deliver exceptional support effortlessly.
+            A global, trustless, and efficient freelance marketplace built on the Internet Computer Protocol. Say goodbye to high fees, payment delays, and centralized control. Say hello to the new era of work.
           </p>
 
           <div>

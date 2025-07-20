@@ -9,6 +9,7 @@ import Feedback from './components/Feedback';
 import Stats from './components/Stats';
 import FaqFloater from './components/FaqFloater';
 import FaqPage from './components/FaqPage';
+import Dashboard from './components/Dashboard';
 
 const MainPage = () => (
   <>
@@ -44,10 +45,11 @@ const MainPage = () => (
           backgroundSize: 'cover',
         }}
       >
+        <Dashboard />
         <AIOfferingsSection />
-        <FutureSection />
-      </div>
 
+      </div>
+        <FutureSection />
       <Stats />
       <Feedback />
       <Footer />
